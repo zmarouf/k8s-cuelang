@@ -61,7 +61,7 @@ service <ID>: {
 	spec: {
 		ports: [...{
 			port:       *8080 | int
-			protocol:   "TCP" | "UDP"
+			protocol:   *"TCP" | "UDP"
 			targetPort: *8080 | int
 		}]
 		selector "app.kubernetes.io/name": ID
