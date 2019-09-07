@@ -165,7 +165,7 @@ function script_init() {
 #       $2 (required): The service directory
 # OUTS: None
 function build() {
-    test -f "/usr/local/bin/cue" || script_exit "CUE is not installed (OSX: brew install cuelang/tap/cue)" "1"
+    test -f "/usr/local/bin/cue" || script_exit "CUE is not installed (MacOS: brew install cuelang/tap/cue)" "1"
     test -d "$script_dir/$1/$2" || script_exit "[$NAME] The service \"$2\" doesn't seem to exist in domain \"$1\".\nExpected to be found at \"$1/$2\"" "1"
     cue dump "$script_dir/kube_tool.cue" "$script_dir/dump_tool.cue" "$script_dir/kube.cue" "$script_dir/$1/kube.cue" "$script_dir/$1/$2/kube.cue" > "$script_dir/$1/$2/kube.yaml"
 }

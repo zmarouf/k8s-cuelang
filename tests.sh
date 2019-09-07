@@ -1,7 +1,7 @@
 #!/bin/sh
 
 BATS=`which bats 2>&1 >/dev/null; echo $?`
-test "$BATS" = 0 || echo "Install bats (OSX: brew install bats)"
+test "$BATS" = 0 || echo "Install bats (MacOS: brew install bats-core)"
 #test "$BATS" = 0 || exit 1
 
 echo -e "#### Testing setup\n"
