@@ -21,6 +21,7 @@ deployment <ID>: {
 		template: {
 			metadata labels "app.kubernetes.io/name": ID
 			spec: {
+				securityContext runAsNonRoot: true
 				restartPolicy:                 "Always"
 				terminationGracePeriodSeconds: 60
 				containers: [{
